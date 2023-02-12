@@ -14,3 +14,36 @@ private List<Car> cars = new (){
     };
 ```    
 Build a simple page markup with where you display the car information and allow the user to guess the price. If within 5,000 of the guess, display a great job message in green. 
+
+
+### SQL
+You have three different tables
+A Customer Table with FirstName, LastName, Age, Occupation, MartialStatus, PersonID
+
+An Orders Table with OrderID, PersonID, DateCreated, MethodofPurchase
+
+An Orders Details table with OrderID, OrderDetailID, ProductNumber, ProductID, ProductOrigin
+
+
+
+Please return a result of the customers who ordered product ID = 1112222333 and return
+FirstName and LastName as full name, age, orderid, datecreated, MethodOfPurchase as Purchase Method, ProductNumber and ProductOrigin
+
+### Result
+
+```
+SELECT 		CONCAT(Cust.FirstName,' ',Cust.LastName) as 'full name'
+, 		Cust.age
+, 		Order.orderid
+, 		Order.datecreated
+, 		Order.MethodOfPurchase as 'Purchase Method'
+, 		ODet.ProductNumber 
+,		ODet.ProductOrigin
+FROM 		Customer Cust
+INNER JOIN 	Order
+ON 		Cust.PersonID  = Order.PersonID
+INNER JOIN	OrderDetail	     ODet
+ON 		ODet.OrderID   = Order.OrderID
+WHERE		ODet.ProductID = 1112222333
+```
+
