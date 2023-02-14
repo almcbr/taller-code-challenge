@@ -1,28 +1,25 @@
-{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
+﻿{
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:57434",
+      "applicationUrl": "http://localhost:7355",
       "sslPort": 0
     }
   },
   "profiles": {
-    "Car.API": {
+    "Car.WebApp": {
       "commandName": "Project",
-      "launchBrowser": false,
-      "launchUrl": "cars",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5029",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:5262",
-      "dotnetRunMessages": true
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "cars",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -1,0 +1,64 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Cars";
+}
+
+<h3>Try to guess the cars price!</h3>
+
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th>
+               Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                Doors
+            </th>
+            <th>
+                Color
+            </th>
+            <th>
+                
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.carModel.Cars) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Make)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Model)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+
+            <td>
+                    <form asp-page-handler="guess" method="post">
+                        @Html.HiddenFor(modelItem => item.Id)
+                        <input type="text" itemid="guessValue" name="guessValue"> 
+                         <button class="btn btn-primary">Click to Guess</button>
+                    </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<h1 style="color:green">@Model.Message</h1>

@@ -9,10 +9,11 @@ namespace Car.API.Controllers
     public class CarsController : ControllerBase
     {
         private readonly AppDbContext _context;
+        public string Message { get; set; }
         public CarsController(AppDbContext context)
         {
             _context = context;
-            
+
         }
 
         // GET: api/<CarsController>
@@ -103,7 +104,6 @@ namespace Car.API.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
 
         private bool CarExists(Guid id)
         {
