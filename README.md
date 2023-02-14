@@ -29,7 +29,7 @@ An Orders Details table with OrderID, OrderDetailID, ProductNumber, ProductID, P
 Please return a result of the customers who ordered product ID = 1112222333 and return
 FirstName and LastName as full name, age, orderid, datecreated, MethodOfPurchase as Purchase Method, ProductNumber and ProductOrigin
 
-### Result
+### Solution
 
 The solution is composed of a Rest API and a Web App.
 
